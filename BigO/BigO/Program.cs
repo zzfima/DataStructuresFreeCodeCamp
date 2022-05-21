@@ -38,6 +38,29 @@ namespace BigO
                     j++;
                 }
             }
+
+            Console.WriteLine(BinarySearch(new[] { 1, 3, 5, 7, 9, 11, 33, 55, 77, 99, 123 }, 77));
+        }
+
+        static bool BinarySearch(int[] arr, int valueToFind)
+        {
+            int lowIndex = 0;
+            int highIndex = arr.Length - 1;
+
+            while (lowIndex < highIndex)
+            {
+                int midIndex = (lowIndex + highIndex) / 2;
+
+                if (arr[midIndex] == valueToFind)
+                    return true;
+
+                if (arr[midIndex] > valueToFind)
+                    highIndex = midIndex - 1;
+                else if (arr[midIndex] < valueToFind)
+                    lowIndex = midIndex + 1;
+            }
+
+            return false;
         }
     }
 }
