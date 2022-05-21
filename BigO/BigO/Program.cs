@@ -42,6 +42,7 @@ namespace BigO
             Console.WriteLine(BinarySearch(new[] { 1, 3, 5, 7, 9, 11, 33, 55, 77, 99, 123 }, 77));
         }
 
+        //f(n) = n/2 + n/4 + n/8 .... O(f(n)) = O(log(n))
         static bool BinarySearch(int[] arr, int valueToFind)
         {
             int lowIndex = 0;
