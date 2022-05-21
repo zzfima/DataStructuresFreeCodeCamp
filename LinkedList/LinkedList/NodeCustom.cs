@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
-namespace LinkedList
+﻿namespace LinkedList
 {
     public class NodeCustom<T>
     {
