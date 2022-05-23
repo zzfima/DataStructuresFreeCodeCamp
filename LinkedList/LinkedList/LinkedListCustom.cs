@@ -102,5 +102,17 @@ namespace LinkedList
                 n = n.Next;
             }
         }
+
+        public void Insert(T val, int place)
+        {
+            var n = _headNode;
+            for (int i = 0; i < place; i++)
+                n = n.Next;
+
+            var newNode = new NodeCustom<T>(val);
+            newNode.Next = n.Next;
+
+            n.Next = newNode;
+        }
     }
 }
