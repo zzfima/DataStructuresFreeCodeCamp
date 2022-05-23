@@ -17,6 +17,33 @@ namespace LinkedList
 
         object IEnumerator.Current => _current.Value;
 
+        public void Remove(T val)
+        {
+            if (_headNode == null)
+                return;
+
+            NodeCustom<T> n = _headNode;
+            while (true)
+            {
+                if (EqualityComparer<T>.Default.Equals(n.Value, val))
+                {
+                    NodeCustom<T> n1 = _headNode;
+                    while (true)
+                    {
+                        if (n == n1.Next)
+                        {
+                            n1.Next = n.Next;
+                            return;
+                        }
+
+                        n1 = n1.Next;
+                    }
+                }
+
+                n = n.Next;
+            }
+        }
+
         public void Add(T val)
         {
             if (_headNode == null)
@@ -48,7 +75,7 @@ namespace LinkedList
 
         public bool MoveNext()
         {
-            if( _current.Next == null )
+            if (_current.Next == null)
                 return false;
             _current = _current.Next;
             return true;

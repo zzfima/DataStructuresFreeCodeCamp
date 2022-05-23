@@ -12,10 +12,14 @@ namespace LinkedList
             linkedListCustom.Add(7);
             linkedListCustom.Add(8);
 
+            linkedListCustom.Remove(7);
+
             foreach (var v in linkedListCustom)
             {
                 Console.WriteLine(v);
             }
+
+            Console.ReadLine();
         }
     }
 }
