@@ -4,4 +4,4 @@ https://www.youtube.com/watch?v=RBSGKlAvoiM&ab_channel=freeCodeCamp.org
 
 ## Implementation language: C#
 
-Progress: 01:09:00
+Progress: 01:31:00
