@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BFS
 {
@@ -7,13 +8,13 @@ namespace BFS
         static void Main(string[] args)
         {
             //create elements
-            TreeElement<int> elementA = new TreeElement<int>(1);
-            TreeElement<int> elementB = new TreeElement<int>(3);
-            TreeElement<int> elementC = new TreeElement<int>(5);
-            TreeElement<int> elementD = new TreeElement<int>(4);
-            TreeElement<int> elementE = new TreeElement<int>(7);
-            TreeElement<int> elementF = new TreeElement<int>(2);
-            TreeElement<int> elementG = new TreeElement<int>(11);
+            var elementA = new TreeElement<int>(1);
+            var elementB = new TreeElement<int>(3);
+            var elementC = new TreeElement<int>(5);
+            var elementD = new TreeElement<int>(4);
+            var elementE = new TreeElement<int>(7);
+            var elementF = new TreeElement<int>(2);
+            var elementG = new TreeElement<int>(11);
 
             //connect elements
             elementA.Neighbors.Add(elementB);
@@ -39,10 +40,14 @@ namespace BFS
 
             elementG.Neighbors.Add(elementE);
 
-            Queue<TreeElement<int>> queue = new Queue<TreeElement<int>>();
+            var queue = new Queue<TreeElement<int>>();
             elementC.Level = 1;
             queue.Enqueue(elementC);
-            TraverseTreeBFS.Traverse(queue);
+            //TraverseTreeBFS.Traverse(queue);
+
+            Console.WriteLine("Other way");
+            var traverseTreeBFSVer2 = new TraverseTreeBFSVer2<int>(elementC);
+            traverseTreeBFSVer2.Traverse();
         }
     }
 }
